@@ -1,0 +1,3 @@
+[run]
+source = laundry_webapp
+omit = laundry_webapp/test*
