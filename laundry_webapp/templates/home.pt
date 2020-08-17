@@ -2,10 +2,19 @@
     <div metal:fill-slot="content">
 
         <div class="content">
-            <h1><span class="font-semi-bold">Pyramid</span> <span class="smaller">Starter project</span></h1>
+            <h1><span class="font-semi-bold">Laundry Signup</span> <span class="smaller">for the Willi Graf Wohnheim</span></h1>
             <p class="lead">Welcome to <span class="font-normal">laundry_webapp</span>, a&nbsp;Pyramid
                 application generated&nbsp;by<br><span class="font-normal">PyCharm</span>.</p>
         </div>
 
     </div>
+
+    <div metal:fill-slot="footer">
+
+        <div class="footer">
+            <p class="footer">test footer</p>
+        </div>
+
+    </div>
+
 </div>

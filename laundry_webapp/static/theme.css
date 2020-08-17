@@ -2,8 +2,8 @@
 body {
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #ffffff;
-  background: #bc2131;
+  color: #061930;
+  background: #ffffff;
 }
 h1,
 h2,
@@ -26,66 +26,84 @@ p {
 .font-bold {
   font-weight: 700;
 }
-.starter-template {
-  margin-top: 250px;
-}
-.starter-template .content {
+.content {
   margin-left: 10px;
 }
-.starter-template .content h1 {
+.content h1 {
   margin-top: 10px;
   font-size: 60px;
 }
-.starter-template .content h1 .smaller {
+.content h1 .smaller {
   font-size: 40px;
-  color: #f2b7bd;
+  color: #a3b7c5;
 }
-.starter-template .content .lead {
+.content .lead {
   font-size: 25px;
   color: #f2b7bd;
 }
-.starter-template .content .lead .font-normal {
-  color: #ffffff;
+.content .lead .font-normal {
+  color: #061930;
 }
-.starter-template .links {
+/* .home {
+  margin-top: 250px;
+}
+.home .content {
+  margin-left: 10px;
+}
+.home .content h1 {
+  margin-top: 10px;
+  font-size: 60px;
+}
+.home .content h1 .smaller {
+  font-size: 40px;
+  color: #a3b7c5;
+}
+.home .content .lead {
+  font-size: 25px;
+  color: #f2b7bd;
+}
+.home .content .lead .font-normal {
+  color: #061930;
+}
+.home .links {
   float: right;
   right: 0;
   margin-top: 125px;
 }
-.starter-template .links ul {
+.home .links ul {
   display: block;
   padding: 0;
   margin: 0;
 }
-.starter-template .links ul li {
+.home .links ul li {
   list-style: none;
   display: inline;
   margin: 0 10px;
 }
-.starter-template .links ul li:first-child {
+.home .links ul li:first-child {
   margin-left: 0;
 }
-.starter-template .links ul li:last-child {
+.home .links ul li:last-child {
   margin-right: 0;
 }
-.starter-template .links ul li.current-version {
+.home .links ul li.current-version {
   color: #f2b7bd;
   font-weight: 400;
 }
-.starter-template .links ul li a {
-  color: #ffffff;
+.home .links ul li a {
+  color: #061930;
 }
-.starter-template .links ul li a:hover {
+.home .links ul li a:hover {
   text-decoration: underline;
 }
-.starter-template .links ul li .icon-muted {
+.home .links ul li .icon-muted {
   color: #eb8b95;
   margin-right: 5px;
 }
-.starter-template .links ul li:hover .icon-muted {
-  color: #ffffff;
+.home .links ul li:hover .icon-muted {
+  color: #061930;
 }
-.starter-template .copyright {
+.home .copyright {
   margin-top: 10px;
   font-size: 0.9em;
   color: #f2b7bd;
@@ -93,60 +111,72 @@ p {
   float: right;
   right: 0;
 }
+*/
+
+
+
+.footer {
+  color: chartreuse;
+}
+
+
+
+
+
 @media (max-width: 1199px) {
-  .starter-template .content h1 {
+  .home .content h1 {
     font-size: 45px;
   }
-  .starter-template .content h1 .smaller {
+  .home .content h1 .smaller {
     font-size: 30px;
   }
-  .starter-template .content .lead {
+  .home .content .lead {
     font-size: 20px;
   }
 }
 @media (max-width: 991px) {
-  .starter-template {
+  .home {
     margin-top: 0;
   }
-  .starter-template .logo {
+  .home .logo {
     margin: 40px auto;
   }
-  .starter-template .content {
+  .home .content {
     margin-left: 0;
     text-align: center;
   }
-  .starter-template .content h1 {
+  .home .content h1 {
     margin-bottom: 20px;
   }
-  .starter-template .links {
+  .home .links {
     float: none;
     text-align: center;
     margin-top: 60px;
   }
-  .starter-template .copyright {
+  .home .copyright {
     float: none;
     text-align: center;
   }
 }
 @media (max-width: 767px) {
-  .starter-template .content h1 .smaller {
+  .home .content h1 .smaller {
     font-size: 25px;
     display: block;
   }
-  .starter-template .content .lead {
+  .home .content .lead {
     font-size: 16px;
   }
-  .starter-template .links {
+  .home .links {
     margin-top: 40px;
   }
-  .starter-template .links ul li {
+  .home .links ul li {
     display: block;
     margin: 0;
   }
-  .starter-template .links ul li .icon-muted {
+  .home .links ul li .icon-muted {
     display: none;
   }
-  .starter-template .copyright {
+  .home .copyright {
     margin-top: 20px;
   }
 }

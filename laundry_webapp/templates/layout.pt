@@ -28,6 +28,9 @@
         <p>Content from layout template</p>
     </div>
 
+    <div metal:define-slot="footer" class="footer">
+        <p>testtest</p>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
