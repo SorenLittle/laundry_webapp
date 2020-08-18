@@ -24,13 +24,23 @@
 
 <body>
 
+    <header>
+        <img src="static/willi_graf_logo.jpeg" alt="logo missing">
+        <h1>Laundry Signup</h1>
+    </header>
+
     <div metal:define-slot="content" class="content">
-        <p>Content from layout template</p>
+        <p>No Content</p>
     </div>
 
-    <div metal:define-slot="footer" class="footer">
-        <p>testtest</p>
-    </div>
+    <footer>
+        <div class="copyright">
+            Copyright &copy; Soren Little.
+        </div>
+        <div class="github">
+            Come visit me on <a href="https://github.com/SorenLittle">GitHub</a>
+        </div>
+    </footer>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
