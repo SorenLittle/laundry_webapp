@@ -9,17 +9,20 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
+    'psycopg2-binary',
     'pyramid',
     'pyramid_chameleon',
     'pyramid_debugtoolbar',
+    'SQLAlchemy',
     'waitress',
-    ]
+    'zope.sqlalchemy', 'transaction', 'alembic'
+]
 
 tests_require = [
     'WebTest >= 1.3.1',  # py3 compat
     'pytest',  # includes virtualenv
     'pytest-cov',
-    ]
+]
 
 setup(name='laundry_webapp',
       version='0.0',
@@ -42,8 +45,12 @@ setup(name='laundry_webapp',
           'testing': tests_require,
       },
       install_requires=requires,
-      entry_points="""\
-      [paste.app_factory]
-      main = laundry_webapp:main
-      """,
+      entry_points={
+          'paste.app_factory': [
+              'main = laundry_webapp:main',
+          ],
+          'console_scripts': [
+              'initialize_laundry_db=laundry_webapp.scripts.initializedb:main',
+          ],
+      },
       )

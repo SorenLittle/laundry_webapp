@@ -1,3 +1,6 @@
-      [paste.app_factory]
-      main = laundry_webapp:main
-      
+[console_scripts]
+initialize_laundry_db = laundry_webapp.scripts.initializedb:main
+
+[paste.app_factory]
+main = laundry_webapp:main
+

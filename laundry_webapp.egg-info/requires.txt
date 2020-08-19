@@ -1,7 +1,12 @@
+psycopg2-binary
 pyramid
-pyramid_jinja2
+pyramid_chameleon
 pyramid_debugtoolbar
+SQLAlchemy
 waitress
+zope.sqlalchemy
+transaction
+alembic
 
 [testing]
 WebTest>=1.3.1
