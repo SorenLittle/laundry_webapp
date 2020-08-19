@@ -1,12 +1,12 @@
+alembic
 psycopg2-binary
 pyramid
 pyramid_chameleon
 pyramid_debugtoolbar
 SQLAlchemy
+transaction
 waitress
 zope.sqlalchemy
-transaction
-alembic
 
 [testing]
 WebTest>=1.3.1

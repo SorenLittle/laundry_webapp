@@ -66,6 +66,9 @@ def includeme(config):
     session_factory = get_session_factory(get_engine(settings))
     config.registry['dbsession_factory'] = session_factory
 
+    # use pyramid_retry to retry a request when transient exceptions occur
+    config.include('pyramid_retry')
+
     # make request.dbsession available for use in Pyramid
     config.add_request_method(
         # r.tm is the transaction manager used by pyramid_tm
