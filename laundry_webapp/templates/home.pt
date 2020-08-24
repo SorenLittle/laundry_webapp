@@ -15,9 +15,9 @@
             </div>
 
 
-            <form action="${url}" method="POST" accept-charset="utf-8" enctype="text/plain">
+            <form action="${url}" method="POST" accept-charset="utf-8">
                 <label>7:00 </label>
-                <input type="text" id="name" placeholder="Deine Name">
+                <input type="text" name="name" placeholder="Deine Name">
                 <input type="submit" value="Submit"/>
             </form>
 
