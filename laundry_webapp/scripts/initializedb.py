@@ -3,17 +3,19 @@ import sys
 
 from pyramid.paster import bootstrap, setup_logging
 from sqlalchemy.exc import OperationalError
-from datetime import date
 
 from laundry_webapp import models
 
 
 def setup_models(dbsession):
-    example = models.LeftAppt(date=date(year=2020, month=8, day=18),
-                              eight='Soren Little',
-                              thirteen='Anna Ossato',
-                              twenty='Annika Irrgang')
-    dbsession.add(example)
+    left_machine = models.Machine(side="Left", accepts="Alles")
+    dbsession.add(left_machine)
+
+    right_machine = models.Machine(side="Right", accepts="50ct")
+    dbsession.add(right_machine)
+
+    test_user = models.User(name="Soren Little")
+    dbsession.add(test_user)
 
 
 def parse_args(argv):

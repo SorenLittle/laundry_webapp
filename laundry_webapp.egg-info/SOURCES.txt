@@ -17,9 +17,10 @@ laundry_webapp.egg-info/top_level.txt
 laundry_webapp/alembic/script.py.mako
 laundry_webapp/alembic/versions/README.txt
 laundry_webapp/models/__init__.py
-laundry_webapp/models/left_appts.py
+laundry_webapp/models/appointments.py
+laundry_webapp/models/machines.py
 laundry_webapp/models/meta.py
-laundry_webapp/models/right_appts.py
+laundry_webapp/models/users.py
 laundry_webapp/scripts/__init__.py
 laundry_webapp/scripts/initializedb.py
 laundry_webapp/static/theme.css

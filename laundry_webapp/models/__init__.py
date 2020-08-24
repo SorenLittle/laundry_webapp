@@ -5,8 +5,9 @@ import zope.sqlalchemy
 
 # import or define all models here to ensure they are attached to the
 # Base.metadata prior to any initialization routines
-from .left_appts import LeftAppt  # noqa
-from .right_appts import RightAppt  # noqa
+from .appointments import Appointment  # noqa
+from .machines import Machine  # noqa
+from .users import User  # noqa
 
 # run configure_mappers after defining all of the models to ensure
 # all relationships can be setup
