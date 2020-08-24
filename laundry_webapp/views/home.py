@@ -8,6 +8,7 @@ from laundry_webapp import models
              renderer='laundry_webapp:templates/home.pt')
 def home(request):
     # TODO: distinguish between left and right machines -> change "appointment = models..." line
+    print(request.POST)
 
     # execute when there is a POST request
     if request.POST.get('name'):
