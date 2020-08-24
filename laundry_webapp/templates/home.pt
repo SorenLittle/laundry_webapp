@@ -18,8 +18,38 @@
             <form action="${url}" method="POST" accept-charset="utf-8">
                 <label>7:00 </label>
                 <input type="text" name="name" placeholder="Deine Name">
-                <input type="submit" value="Submit"/>
+                <input type="submit" value="Sign Up"/>
             </form>
+
+            <p>${todays_appts}</p>
+
+            <div class="container time-slots">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6">
+
+                        <div class="time-slot" tal:repeat="txt ('07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00')">
+
+                            <form tal:condition="python: txt not in todays_appts" action="${url}"
+                                                                                  method="POST"
+                                                                                  accept-charset="utf-8">
+                                <label tal:replace="txt"></label>
+                                <label>
+                                    <input type="text" name="name" placeholder="Deine Name">
+                                </label>
+                                <input type="submit" value="Sign Up"/>
+                            </form>
+
+                            <div tal:condition="python: txt in todays_appts" class="taken">
+                                <label tal:replace="txt"></label>
+                                <p>${todays_appts[txt]}</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
 
         </div>
 
