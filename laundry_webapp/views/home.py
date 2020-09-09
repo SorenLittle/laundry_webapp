@@ -40,7 +40,7 @@ def home(request):
 
         # build appointment for that user
         appointment = models.Appointment(date=datetime.today().date(),
-                                         hour=7,
+                                         hour=request.POST.get('time'),
                                          user_id=given_id,
                                          machine_id="Left",
                                          )

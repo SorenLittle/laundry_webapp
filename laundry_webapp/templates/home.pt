@@ -28,7 +28,7 @@
                                     <input type="text" name="name" placeholder="Deine Name">
                                 </label>
                                 <input type="submit" value="Sign Up"/>
-                                <input type="hidden" name="time" value=>
+                                <input type="hidden" name="time" value=${h}>
                             </form>
 
                             <div tal:condition="python: h in todays_appointments" class="taken">

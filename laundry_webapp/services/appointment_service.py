@@ -10,5 +10,4 @@ def todays_appointments(request):
 
     appts = {appointment.hour: appointment.user.name for appointment in appts_query}
 
-    print(appts)
     return appts
