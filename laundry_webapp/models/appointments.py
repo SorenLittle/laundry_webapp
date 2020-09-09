@@ -3,9 +3,10 @@ from sqlalchemy.dialects.postgresql import UUID
 from uuid import uuid4
 from sqlalchemy import (
     Column,
-    Text,
+    Date,
     ForeignKey,
-    DateTime,
+    Integer,
+    Text,
 )
 
 from .meta import Base
@@ -23,9 +24,14 @@ class Appointment(Base):
         default=uuid4,
     )
 
-    datetime = Column(
-        DateTime,
+    date = Column(
+        Date,
         nullable=False,
+    )
+
+    hour = Column(
+        Integer,
+        nullable=False
     )
 
     user_id = Column(
