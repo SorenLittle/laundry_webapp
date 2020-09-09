@@ -12,16 +12,14 @@
 
             <div class="laundry-stats"></div>
 
-            <p>${todays_appointments}</p>
-
             <div class="container time-slots">
                 <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4">
 
-                        <div class="time_slot" tal:repeat="h range(7,21)">
+                        <div class="left_time_slot" tal:repeat="h range(7,21)">
 
-                            <form tal:condition="python: h not in todays_appointments" action="${url}" method="POST"
+                            <form tal:condition="python: h not in todays_left_appointments" action="${url}" method="POST"
                                                                                        accept-charset="utf-8">
                                 <label tal:replace="h"></label>
                                 <label>
@@ -29,17 +27,42 @@
                                 </label>
                                 <input type="submit" value="Sign Up"/>
                                 <input type="hidden" name="time" value=${h}>
+                                <input type="hidden" name="side" value="Left">
                             </form>
 
-                            <div tal:condition="python: h in todays_appointments" class="taken">
+                            <div tal:condition="python: h in todays_left_appointments" class="taken">
                                 <label tal:replace="h"></label>
-                                <p>${todays_appointments[h]}</p>
+                                <p>${todays_left_appointments.get(h)}</p>
 
                             </div>
 
                         </div>
 
-                    <div class="col-md-3"></div>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+
+                        <div class="right_time_slot" tal:repeat="h range(7,21)">
+
+                            <form tal:condition="python: h not in todays_right_appointments" action="${url}" method="POST"
+                                                                                       accept-charset="utf-8">
+                                <label tal:replace="h"></label>
+                                <label>
+                                    <input type="text" name="name" placeholder="Deine Name">
+                                </label>
+                                <input type="submit" value="Sign Up"/>
+                                <input type="hidden" name="time" value=${h}>
+                                <input type="hidden" name="side" value="Right">
+                            </form>
+
+                            <div tal:condition="python: h in todays_right_appointments" class="taken">
+                                <label tal:replace="h"></label>
+                                <p>${todays_left_appointments.get(h)}</p>
+
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
 

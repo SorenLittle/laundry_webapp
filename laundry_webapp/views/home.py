@@ -13,6 +13,7 @@ def home(request):
 
     # execute when there is a POST request
     if request.POST.get('name'):
+        # TODO: add something for if the post fails
 
         # receive a "given_name" from the users POST into the website
         given_name = request.POST.get('name')
@@ -42,12 +43,16 @@ def home(request):
         appointment = models.Appointment(date=datetime.today().date(),
                                          hour=request.POST.get('time'),
                                          user_id=given_id,
-                                         machine_id="Left",
+                                         machine_id=request.POST.get('side'),
                                          )
 
         request.dbsession.add(appointment)
 
+    todays_left_appointments = appointment_service.todays_left_appointments(request)
+    todays_right_appointments = appointment_service.todays_right_appointments(request)
+
     return {
         'url': request.route_url('home'),
-        'todays_appointments': appointment_service.todays_appointments(request),
+        'todays_left_appointments': todays_left_appointments,
+        'todays_right_appointments': todays_right_appointments,
     }
