@@ -10,16 +10,7 @@
                 </h1>
             </div>
 
-            <div class="laundry-stats">
-
-            </div>
-
-
-<!--?            <form action="${url}" method="POST" accept-charset="utf-8">-->
-<!--?                <label>7:00 </label>-->
-<!--?                <input type="text" name="name" placeholder="Deine Name">-->
-<!--?                <input type="submit" value="Sign Up"/>-->
-<!--?            </form>-->
+            <div class="laundry-stats"></div>
 
             <p>${todays_appointments}</p>
 
@@ -28,11 +19,11 @@
                     <div class="col-md-3"></div>
                     <div class="col-md-6">
 
-                        <div class="time-slot" tal:repeat="txt ('07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00')">
+                        <div class="time_slot" tal:repeat="h range(7,21)">
 
-                            <form tal:condition="python: txt not in todays_appointments" action="${url}" method="POST"
-                                                                                  accept-charset="utf-8">
-                                <label tal:replace="txt"></label>
+                            <form tal:condition="python: h not in todays_appointments" action="${url}" method="POST"
+                                                                                       accept-charset="utf-8">
+                                <label tal:replace="h"></label>
                                 <label>
                                     <input type="text" name="name" placeholder="Deine Name">
                                 </label>
@@ -40,20 +31,22 @@
                                 <input type="hidden" name="time" value=>
                             </form>
 
-                            <div tal:condition="python: txt in todays_appointments" class="taken">
-                                <label tal:replace="txt"></label>
-                                <p>${todays_appointments[txt]}</p>
+                            <div tal:condition="python: h in todays_appointments" class="taken">
+                                <label tal:replace="h"></label>
+                                <p>${todays_appointments[h]}</p>
+
                             </div>
+
                         </div>
 
-                    </div>
                     <div class="col-md-3"></div>
+                    </div>
                 </div>
+
             </div>
 
         </div>
 
     </div>
-
 
 </div>

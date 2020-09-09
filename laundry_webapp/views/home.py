@@ -47,14 +47,6 @@ def home(request):
 
         request.dbsession.add(appointment)
 
-    # TODO: figure out what of this we don't need anymore!!
-    # # send updated dictionary of appointments
-    # todays_appts = {}
-    # for appointment in request.dbsession.query(models.Appointment):
-    #     # get only appointments for today
-    #     if appointment.datetime.date() == datetime.today().date():
-    #         todays_appts[appointment.datetime.strftime("%H:00")] = appointment.user.name
-
     return {
         'url': request.route_url('home'),
         'todays_appointments': appointment_service.todays_appointments(request),
